@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'hiragino';
+    src: url('font/hiragino.ttc');
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -wibkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    background-color: #FCFAF2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.split {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease-out;
+}
+
+img{
+    width: 600px;
+}
+
+.left-img{
+    position: absolute;
+    top: 50%;
+    opacity: 0.3;
+    
+}
+
+.right-img{
+    position: absolute;
+    top: 50%;
+    opacity: 0.3;
+}
+
+.site-title {
+    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+    text-align: center;
+    font-size: 110px;
+    letter-spacing: 10px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-left: -90px;
+    z-index: 99;
+}
+
+.blue,
+.red {
+    height: 100%;
+    width: 50%;
+}
+
+.red {
+    position: absolute;
+    left: 15%;
+    top: 0px;
+    font-size: 100px;
+    text-shadow: 3px 4px 80px #D0104C;
+}
+
+.blue {
+    position: absolute;
+    left: 15%;
+    top: 0px;
+    font-size: 100px;
+    text-shadow: 3px 4px 80px #2EA9DF;
+}
+
+.shadow1 {
+    position: absolute;
+    top: 40%;
+    text-shadow: '2px 2px 4px red';
+}
+
+.shadow {
+    position: absolute;
+    top: 40%;
+    text-shadow: '2px 2px 4px blue';
+}
+
+.left,
+.right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #FCFAF2;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.btn {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    margin: 0;
+    padding: 250px;
+    width: 50%;
+    z-index: 1000;
+    transition: all 0.5s ease-out;
+    
+}
+
+.btn h3 {
+    font-size: 20px;
+    writing-mode: horizontal-tb;
+    width: 100%;
+    border-radius: 20%/80%;
+    background: #FCFAF2 color: white;
+
+    margin: 13px 0 0 0;
+    padding: 5% 10%;
+    text-align: center;
+    font-family: 'Roboto Slab';
+    transition: all 0.1s ease-in;
+    position: absolute;
+    bottom: 0;
+}
+
+.page {
+    margin: 0;
+    position: absolute;
+    width: 75%;
+    z-index: 10;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all .8s ease-out;
+}
+
+.page-content {
+    padding: 1em 2em;
+    margin: 0px 13px;
+}
+
+.page-content p:first-of-type {
+    font-size: 1.3em;
+}
+
+.page-left {
+    transform: translateX(-100%);
+    background-color: #FCFAF2;
+    margin-right: 200px;
+    padding-left: 150px;
+}
+
+.page-left .page-content {
+    width: 60%;
+    word-wrap: break-word;
+}
+
+.page-right {
+    background-color: #FCFAF2;
+    transform: translateX(133.33%);
+    margin-right: 550px;
+}
+
+.shift-left {
+    transform: translateX(-50%);
+    width: 50%;
+    transition: all 0.45s ease-in;
+}
+
+.shift-right {
+    transform: translateX(150%);
+    width: 50%;
+    transition: all 0.45s ease-in;
+}
+
+.page-shift-left {
+    transform: translateX(33.33%);
+    transition: all 0.4s ease-in;
+}
+
+.page-shift-right {
+    transform: translateX(0);
+    transition: all 0.3s ease-in;
+}
+
+@media screen and (max-width:1080px) {
+    .btn {
+        left: 10%;
+        width: 80%;
+        height: auto;
+
+    }
+    .btn h2 {
+        font-size: 2em;
+    }
+    [class*='shift'] .btn {
+        transform: scale(.5);
+    }
+    @media screen and (max-width:625px) {
+        .btn h2 {
+            font-size: 1em;
+        }
+        [class*='shift'] .btn > h2 {}
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.3em;
+        }
+        @media screen and (max-width:480px) {
+            body {
+                font-size: 80%;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            p {
+                line-height: 2;
+            }
+            [class*='shift'] .btn {
+                transform: scale(1);
+            }
